@@ -83,8 +83,6 @@ public abstract class Server {
     static final int IPC_SERVER_RPC_MAX_RESPONSE_SIZE_DEFAULT = 1024*1024;
 
     public static final Log LOG = LogFactory.getLog(Server.class);
-    private static final Log AUDITLOG =
-            LogFactory.getLog("SecurityLogger."+Server.class.getName());
     private static final String AUTH_FAILED_FOR = "Auth failed for ";
     private static final String AUTH_SUCCESSFULL_FOR = "Auth successfull for ";
 
@@ -262,7 +260,6 @@ public abstract class Server {
                 this.readSelector = readSelector;
             }
             public void run() {
-                LOG.info("Starting SocketReader");
                 synchronized (this) {
                     while (running) {
                         SelectionKey key = null;
@@ -368,7 +365,6 @@ public abstract class Server {
 
         @Override
         public void run() {
-            LOG.info(getName() + ": starting");
             SERVER.set(Server.this);
             while (running) {
                 SelectionKey key = null;
@@ -451,9 +447,7 @@ public abstract class Server {
                         connectionList.add(numConnections, c);
                         numConnections++;
                     }
-                    if (LOG.isDebugEnabled())
-                        LOG.debug("Server connection from " + c.toString() +
-                                "; # active connections: " + numConnections +
+                    LOG.info("Server connection from " + c.toString() + "; # active connections: " + numConnections +
                                 "; # queued calls: " + callQueue.size());
                 } finally {
                     reader.finishAdd();
@@ -481,10 +475,7 @@ public abstract class Server {
                 count = -1; //so that the (count < 0) block is executed
             }
             if (count < 0) {
-                if (LOG.isDebugEnabled())
-                    LOG.debug(getName() + ": disconnecting client " +
-                            c + ". Number of active connections: "+
-                            numConnections);
+                    LOG.info(getName() + ": disconnecting client " + c + ". Number of active connections: "+ numConnections);
                 closeConnection(c);
                 c = null;
             }
@@ -533,7 +524,6 @@ public abstract class Server {
 
         @Override
         public void run() {
-            LOG.info(getName() + ": starting");
             SERVER.set(Server.this);
             long lastPurgeTime = 0;   // last check for old calls.
 
@@ -686,10 +676,8 @@ public abstract class Server {
                         } else {
                             done = false;            // more calls pending to be sent.
                         }
-                        if (LOG.isDebugEnabled()) {
-                            LOG.debug(getName() + ": responding to #" + call.id + " from " +
+                        LOG.info(getName() + ": responding to #" + call.id + " from " +
                                     call.connection + " Wrote " + numBytes + " bytes.");
-                        }
                     } else {
                         //
                         // If we were unable to write the entire response out, then
@@ -714,11 +702,8 @@ public abstract class Server {
                                 decPending();
                             }
                         }
-                        if (LOG.isDebugEnabled()) {
-                            LOG.debug(getName() + ": responding to #" + call.id + " from " +
-                                    call.connection + " Wrote partial " + numBytes +
-                                    " bytes.");
-                        }
+                        LOG.debug(getName() + ": responding to #" + call.id + " from " +
+                                    call.connection + " Wrote partial " + numBytes + " bytes.");
                     }
                     error = false;              // everything went off well
                 }
@@ -952,10 +937,8 @@ public abstract class Server {
         private void processOneRpc(byte[] buf) throws IOException,
                 InterruptedException {
             if (headerRead) {
-                LOG.info("Connection start to process Data");
                 processData(buf);
             } else {
-                LOG.info("Connection start to process header");
                 processHeader(buf);
                 headerRead = true;
             }
@@ -1027,10 +1010,6 @@ public abstract class Server {
                 try {
                     final Call call = callQueue.take(); // pop the queue; maybe blocked here
                     LOG.info(getName() + ": has #" + call.id + " from " + call.connection);
-
-                    if (LOG.isDebugEnabled())
-                        LOG.debug(getName() + ": has #" + call.id + " from " +
-                                call.connection);
 
                     String errorClass = null;
                     String error = null;

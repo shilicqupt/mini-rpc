@@ -465,11 +465,8 @@ public class RPC {
                 Object value = method.invoke(instance, call.getParameters());
                 int processingTime = (int) (System.currentTimeMillis() - startTime);
                 int qTime = (int) (startTime-receivedTime);
-                if (LOG.isDebugEnabled()) {
-                    LOG.debug("Served: " + call.getMethodName() +
-                            " queueTime= " + qTime +
-                            " procesingTime= " + processingTime);
-                }
+                LOG.debug("****Served: " + call.getMethodName() +
+                            " queueTime= " + qTime + " procesingTime= " + processingTime + "***");
                 if (verbose) log("Return: "+value);
 
                 return new ObjectWritable(method.getReturnType(), value);
