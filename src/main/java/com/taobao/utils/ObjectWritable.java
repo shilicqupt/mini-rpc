@@ -3,8 +3,6 @@ package com.taobao.utils;
 /**
  * Created by shili on 14-2-27.
  */
-
-import com.taobao.minirpc.Configurable;
 import com.taobao.minirpc.Writable;
 
 import java.io.DataInput;
@@ -17,7 +15,7 @@ import java.util.Map;
 /** A polymorphic Writable that writes an instance with it's class name.
  * Handles arrays, strings and primitive types without a Writable wrapper.
  */
-public class ObjectWritable implements Writable, Configurable {
+public class ObjectWritable implements Writable{
 
     private Class declaredClass;
     private Object instance;
@@ -222,7 +220,7 @@ public class ObjectWritable implements Writable, Configurable {
                 throw new RuntimeException("readObject can't find class " + str, e);
             }
 
-            Writable writable = WritableFactories.newInstance(instanceClass, conf);
+            Writable writable = WritableFactories.newInstance(instanceClass);
             writable.readFields(in);
             instance = writable;
 
@@ -240,14 +238,5 @@ public class ObjectWritable implements Writable, Configurable {
         return instance;
 
     }
-
-    public void setConf(Configuration conf) {
-        this.conf = conf;
-    }
-
-    public Configuration getConf() {
-        return this.conf;
-    }
-
 }
 

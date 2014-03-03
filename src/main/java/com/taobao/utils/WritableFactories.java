@@ -26,22 +26,13 @@ public class WritableFactories {
     }
 
     /** Create a new instance of a class with a defined factory. */
-    public static Writable newInstance(Class<? extends Writable> c, Configuration conf) {
+    public static Writable newInstance(Class<? extends Writable> c) {
         WritableFactory factory = WritableFactories.getFactory(c);
         if (factory != null) {
             Writable result = (Writable) factory.newInstance();
-            if (result instanceof Configurable) {
-                ((Configurable) result).setConf(conf);
-            }
             return result;
         } else {
             return ReflectionUtils.newInstance(c);
         }
     }
-
-    /** Create a new instance of a class with a defined factory. */
-    public static Writable newInstance(Class<? extends Writable> c) {
-        return newInstance(c, null);
-    }
-
 }
