@@ -1,22 +1,17 @@
 package com.taobao.minirpc;
 
 import com.taobao.utils.Configuration;
-import com.taobao.utils.ReflectionUtils;
 import com.taobao.utils.StringUtils;
 import com.taobao.utils.WritableUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import javax.security.sasl.Sasl;
-import javax.security.sasl.SaslException;
-import javax.security.sasl.SaslServer;
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
-import java.security.PrivilegedExceptionAction;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -788,9 +783,6 @@ public abstract class Server {
         ConnectionHeader header = new ConnectionHeader();
         Class<?> protocol;
         private ByteBuffer rpcHeaderBuffer;
-        private ByteBuffer unwrappedData;
-        private ByteBuffer unwrappedDataLengthBuffer;
-
 
         // Fake 'call' for failed authorization response
         private final int AUTHROIZATION_FAILED_CALLID = -1;
@@ -806,8 +798,6 @@ public abstract class Server {
             this.lastContact = lastContact;
             this.data = null;
             this.dataLengthBuffer = ByteBuffer.allocate(4);
-            this.unwrappedData = null;
-            this.unwrappedDataLengthBuffer = ByteBuffer.allocate(4);
             this.socket = channel.socket();
             this.addr = socket.getInetAddress();
             if (addr == null) {

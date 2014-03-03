@@ -175,7 +175,7 @@ public class RPC {
             }
 
             ObjectWritable value = (ObjectWritable)
-                    client.call(new Invocation(method, args), remoteId);
+                    client.call(new Invocation(method, args), remoteId);   //无需传入协议名称只需要方法名称和参数，因为协议名称已经由ConnectionHeader传入到Server
             if (logDebug) {
                 long callTime = System.currentTimeMillis() - startTime;
                 LOG.debug("Call: " + method.getName() + " " + callTime);
@@ -319,9 +319,9 @@ public class RPC {
     /** Construct a client-side proxy object that implements the named protocol,
      * talking to a server at the named address. */
     public static VersionedProtocol getProxy(
-            Class<? extends VersionedProtocol> protocol,
+            Class<? extends VersionedProtocol> protocol,   //协议接口，必须实现接口VersionedProtocol
             long clientVersion, InetSocketAddress addr, SocketFactory factory, int rpcTimeout,
-            RetryPolicy connectionRetryPolicy,
+            RetryPolicy connectionRetryPolicy,   //可拔插的重试机制
             boolean checkVersion) throws IOException {
 
         final Invoker invoker = new Invoker(protocol, addr, factory,

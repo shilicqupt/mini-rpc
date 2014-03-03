@@ -1,0 +1,195 @@
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:265 - Starting SocketReader
+2014-03-03 15:18:30 INFO  Server:1022 - IPC Server handler 0 on 32121: starting
+2014-03-03 15:18:30 INFO  Server:371 - IPC Server listener on 32121: starting
+2014-03-03 15:18:30 INFO  Server:536 - IPC Server Responder: starting
+2014-03-03 15:28:17 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:17 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:28:18 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:19 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:20 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:20 DEBUG Client:623 - closing ipc connection to 10.74.156.106/10.74.156.106:32121: Connection refused
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:354)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:326)
+	at com.taobao.minirpc.Client$Connection.setupConnection(Client.java:286)
+	at com.taobao.minirpc.Client$Connection.setupIOstreams(Client.java:330)
+	at com.taobao.minirpc.Client$Connection.access$1500(Client.java:124)
+	at com.taobao.minirpc.Client.getConnection(Client.java:886)
+	at com.taobao.minirpc.Client.call(Client.java:752)
+	at com.taobao.minirpc.RPC$Invoker.invoke(RPC.java:177)
+	at com.sun.proxy.$Proxy0.getFileStatus(Unknown Source)
+	at com.taobao.ipcexample.IPCQueryParaClient.run(IPCQueryParaClient.java:20)
+2014-03-03 15:28:20 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:28:20 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:20 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:28:21 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:22 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:23 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:23 DEBUG Client:623 - closing ipc connection to 10.74.156.106/10.74.156.106:32121: Connection refused
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:354)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:326)
+	at com.taobao.minirpc.Client$Connection.setupConnection(Client.java:286)
+	at com.taobao.minirpc.Client$Connection.setupIOstreams(Client.java:330)
+	at com.taobao.minirpc.Client$Connection.access$1500(Client.java:124)
+	at com.taobao.minirpc.Client.getConnection(Client.java:886)
+	at com.taobao.minirpc.Client.call(Client.java:752)
+	at com.taobao.minirpc.RPC$Invoker.invoke(RPC.java:177)
+	at com.sun.proxy.$Proxy0.getFileStatus(Unknown Source)
+	at com.taobao.ipcexample.IPCQueryParaClient.run(IPCQueryParaClient.java:20)
+2014-03-03 15:28:23 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:28:23 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:23 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:28:24 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:25 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:26 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:26 DEBUG Client:623 - closing ipc connection to 10.74.156.106/10.74.156.106:32121: Connection refused
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:354)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:326)
+	at com.taobao.minirpc.Client$Connection.setupConnection(Client.java:286)
+	at com.taobao.minirpc.Client$Connection.setupIOstreams(Client.java:330)
+	at com.taobao.minirpc.Client$Connection.access$1500(Client.java:124)
+	at com.taobao.minirpc.Client.getConnection(Client.java:886)
+	at com.taobao.minirpc.Client.call(Client.java:752)
+	at com.taobao.minirpc.RPC$Invoker.invoke(RPC.java:177)
+	at com.sun.proxy.$Proxy0.getFileStatus(Unknown Source)
+	at com.taobao.ipcexample.IPCQueryParaClient.run(IPCQueryParaClient.java:20)
+2014-03-03 15:28:26 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:28:26 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:26 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:28:27 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:28 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:29 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:29 DEBUG Client:623 - closing ipc connection to 10.74.156.106/10.74.156.106:32121: Connection refused
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:354)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:326)
+	at com.taobao.minirpc.Client$Connection.setupConnection(Client.java:286)
+	at com.taobao.minirpc.Client$Connection.setupIOstreams(Client.java:330)
+	at com.taobao.minirpc.Client$Connection.access$1500(Client.java:124)
+	at com.taobao.minirpc.Client.getConnection(Client.java:886)
+	at com.taobao.minirpc.Client.call(Client.java:752)
+	at com.taobao.minirpc.RPC$Invoker.invoke(RPC.java:177)
+	at com.sun.proxy.$Proxy0.getFileStatus(Unknown Source)
+	at com.taobao.ipcexample.IPCQueryParaClient.run(IPCQueryParaClient.java:20)
+2014-03-03 15:28:29 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:28:29 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:29 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:28:30 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:31 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:32 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:32 DEBUG Client:623 - closing ipc connection to 10.74.156.106/10.74.156.106:32121: Connection refused
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:354)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:326)
+	at com.taobao.minirpc.Client$Connection.setupConnection(Client.java:286)
+	at com.taobao.minirpc.Client$Connection.setupIOstreams(Client.java:330)
+	at com.taobao.minirpc.Client$Connection.access$1500(Client.java:124)
+	at com.taobao.minirpc.Client.getConnection(Client.java:886)
+	at com.taobao.minirpc.Client.call(Client.java:752)
+	at com.taobao.minirpc.RPC$Invoker.invoke(RPC.java:177)
+	at com.sun.proxy.$Proxy0.getFileStatus(Unknown Source)
+	at com.taobao.ipcexample.IPCQueryParaClient.run(IPCQueryParaClient.java:20)
+2014-03-03 15:28:32 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:28:32 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:32 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:28:33 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:35 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:36 INFO  Client:422 - Retrying connect to server: 10.74.156.106/10.74.156.106:32121. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1 SECONDS)
+2014-03-03 15:28:36 DEBUG Client:623 - closing ipc connection to 10.74.156.106/10.74.156.106:32121: Connection refused
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:354)
+	at com.taobao.utils.NetUtils.connect(NetUtils.java:326)
+	at com.taobao.minirpc.Client$Connection.setupConnection(Client.java:286)
+	at com.taobao.minirpc.Client$Connection.setupIOstreams(Client.java:330)
+	at com.taobao.minirpc.Client$Connection.access$1500(Client.java:124)
+	at com.taobao.minirpc.Client.getConnection(Client.java:886)
+	at com.taobao.minirpc.Client.call(Client.java:752)
+	at com.taobao.minirpc.RPC$Invoker.invoke(RPC.java:177)
+	at com.sun.proxy.$Proxy0.getFileStatus(Unknown Source)
+	at com.taobao.ipcexample.IPCQueryParaClient.run(IPCQueryParaClient.java:20)
+2014-03-03 15:28:36 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:28:36 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:28:36 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:29:23 DEBUG Client:158 - The ping interval is60000ms.
+2014-03-03 15:29:23 DEBUG Client:324 - Connecting to /10.74.156.106:32121
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #0
+2014-03-03 15:29:23 DEBUG Client:500 - IPC Client (1714341873) connection to /10.74.156.106:32121: starting, having connections 1
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #2
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #8
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #9
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #7
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #6
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #4
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #5
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #3
+2014-03-03 15:29:23 DEBUG Client:527 - IPC Client (1714341873) connection to /10.74.156.106:32121 sending #1
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #0
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #2
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 80
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 80
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #8
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #9
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #7
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 83
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 84
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #6
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 84
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 85
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #4
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #5
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #3
+2014-03-03 15:29:23 DEBUG Client:560 - IPC Client (1714341873) connection to /10.74.156.106:32121 got value #1
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 86
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 86
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 86
+2014-03-03 15:29:23 DEBUG RPC:181 - Call: getFileStatus 86
+2014-03-03 15:29:23 DEBUG Client:709 - Stopping client
+2014-03-03 15:29:23 DEBUG Client:631 - IPC Client (1714341873) connection to /10.74.156.106:32121: closed
+2014-03-03 15:29:23 DEBUG Client:510 - IPC Client (1714341873) connection to /10.74.156.106:32121: stopped, remaining connections 0

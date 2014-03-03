@@ -2,10 +2,7 @@ package com.taobao.ipcexample;
 
 import com.taobao.minirpc.RPC;
 import com.taobao.minirpc.Server;
-import org.apache.log4j.Level;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.PatternLayout;
+import org.apache.log4j.*;
 
 /**
  * Created by shili on 14-2-28.
@@ -16,9 +13,10 @@ public class IPCQueryServer {
 
     public static void main(String[] args) {
         try {
-            ConsoleAppender append=new ConsoleAppender(new PatternLayout(PatternLayout.TTCC_CONVERSION_PATTERN));
-            append.setThreshold(Level.DEBUG);
-            BasicConfigurator.configure();
+            //ConsoleAppender append=new ConsoleAppender(new PatternLayout(PatternLayout.TTCC_CONVERSION_PATTERN));
+//            FileAppender append = new FileAppender(new PatternLayout(PatternLayout.TTCC_CONVERSION_PATTERN), "minirpc.log");
+//            append.setThreshold(Level.DEBUG);
+//            BasicConfigurator.configure();
 
             IPCQueryStatusImpl queryService=new IPCQueryStatusImpl();
 

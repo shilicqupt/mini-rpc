@@ -526,8 +526,6 @@ public class Client {
                     if (LOG.isDebugEnabled())
                         LOG.debug(getName() + " sending #" + call.id);
 
-                    //for serializing the
-                    //data to be written
                     d = new DataOutputBuffer();
                     d.writeInt(call.id);
                     call.param.write(d);
@@ -962,7 +960,7 @@ public class Client {
                                             RetryPolicy connectionRetryPolicy) throws IOException {
 
             if (connectionRetryPolicy == null) {
-                final int max = 3; //IPC_CLIENT_CONNECT_MAX_RETRIES_KEY,IPC_CLIENT_CONNECT_MAX_RETRIES_DEFAULT
+                final int max = 3; //最大重试次数设置
 
                 connectionRetryPolicy = RetryPolicies.retryUpToMaximumCountWithFixedSleep(
                         max, 1, TimeUnit.SECONDS);
@@ -973,7 +971,7 @@ public class Client {
                     rpcTimeout, remotePrincipal,
                      10000, // 10s
                     connectionRetryPolicy,
-                    false, //ipc.client.tcpnodelay,
+                    false, //ipc.client.tcpnodelay, 关闭tcpnodelay标志位，保证IO无阻塞
                     Client.getPingInterval());
         }
 
